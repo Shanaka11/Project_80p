@@ -2,6 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 
@@ -10,7 +11,7 @@ public class Save_Load {
 	//Creating Reading Saving files
 	
 	// To store File info
-	static ArrayList<Course_Node> Course_List = new ArrayList<Course_Node>();
+	static HashMap<String,Course_Node> Course_List = new HashMap<String,Course_Node>();
 	
 	// To Create 
 	private void create_file(String name){
@@ -61,7 +62,7 @@ public class Save_Load {
 	// To clear the ArrayList
 	public void freeList(){
 		
-		Course_List = new ArrayList<Course_Node>();
+		Course_List = new HashMap<String,Course_Node>();
 		
 	}
 	
