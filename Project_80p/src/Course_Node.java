@@ -16,6 +16,15 @@ public class Course_Node {
 		
 	}
 	
+	//Constructor when loading old files
+	
+	Course_Node(int attend,int held){
+		
+		this.lecs_attend = attend;
+		this.lecs_held = held;
+		percentAge();
+	}
+	
 	// for testing
 	
 	public void print_node(){
