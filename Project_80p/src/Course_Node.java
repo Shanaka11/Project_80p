@@ -6,10 +6,13 @@ public class Course_Node {
 	
 	//Variables for storing lectures that were attended and held and the percentage of the attendance
 	int lecs_attend,lecs_held,attend_perc;
+	String Course_Name,Course_Code;
 	
 	//Default Constructor sets attendance values at 0
-	Course_Node(){
+	Course_Node(String name,String code){
 		
+		this.Course_Name = name;
+		this.Course_Code = code;
 		this.lecs_attend = 0;
 		this.lecs_held = 0;
 		this.attend_perc = 0;
@@ -18,8 +21,10 @@ public class Course_Node {
 	
 	//Constructor when loading old files
 	
-	Course_Node(int attend,int held){
+	Course_Node(String name,String code,int attend,int held){
 		
+		this.Course_Name = name;
+		this.Course_Code = code;
 		this.lecs_attend = attend;
 		this.lecs_held = held;
 		percentAge();
