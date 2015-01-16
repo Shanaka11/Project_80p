@@ -1,7 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -42,8 +41,17 @@ public class Save_Load {
 				
 			Scanner x = new Scanner(file);
 			
-			int temp_at,temp_he;
-			String Course_Name,Course_Code;
+			String in;
+			String[] temp;
+			
+			while(x.hasNext()){
+				
+				in = x.nextLine();
+				temp = in.split(" ");
+				Course_Node temp_node = new Course_Node(temp[0], temp[1], Integer.parseInt(temp[2]), Integer.parseInt(temp[3]));
+				Course_List.put(temp[1], temp_node);
+				
+			}
 			
 			
 			x.close();
@@ -56,7 +64,9 @@ public class Save_Load {
 		}
 			
 	}
-		
+	
+	// To Save data to the file
+	// This will take a list from the main program and save it in the file
 	
 	
 	// To clear the ArrayList
