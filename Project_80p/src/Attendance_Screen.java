@@ -61,7 +61,7 @@ public class Attendance_Screen extends JFrame {
 		//Enter a sample entry
 		sample_input();
 		//Load the Content From File
-		Save_Load sam = new Save_Load();
+		final Save_Load sam = new Save_Load();
 		sam.load("Courses.txt");
 		
 		JLabel lblCourseName_1 = new JLabel("Computer Communicaton Network II");
@@ -108,6 +108,7 @@ public class Attendance_Screen extends JFrame {
 				lblNoAt_1.setText(Integer.toString(temp.lecs_attend));
 				lblNoHe_1.setText(Integer.toString(temp.lecs_held));
 				lblPerc_1.setText(Integer.toString(temp.attend_perc));
+				sam.save("Courses.txt");
 			}
 			
 		});
@@ -122,6 +123,7 @@ public class Attendance_Screen extends JFrame {
 				lblNoAt_1.setText(Integer.toString(temp.lecs_attend));
 				lblNoHe_1.setText(Integer.toString(temp.lecs_held));
 				lblPerc_1.setText(Integer.toString(temp.attend_perc));
+				sam.save("Courses.txt");
 			}
 		});
 		btnMissed_1.setBounds(123, 81, 91, 23);
