@@ -10,9 +10,12 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 
 
+
 import javax.swing.JButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 
 @SuppressWarnings("serial")
@@ -56,6 +59,8 @@ public class Attendance_Screen extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+				
+		
 		//Dataholder
 		//ArrayList<Course_Node> Hold = new ArrayList<Course_Node>();
 		//Enter a sample entry
@@ -70,6 +75,7 @@ public class Attendance_Screen extends JFrame {
 		lblCourseName_1.setText(Save_Load.Course_List.get(0).Course_Name);
 		
 		JLabel lblAttend_1 = new JLabel("Attended_Letures");
+		lblAttend_1.setForeground(Color.BLACK);
 		lblAttend_1.setBounds(20, 36, 93, 14);
 		contentPane.add(lblAttend_1);
 		
@@ -128,5 +134,9 @@ public class Attendance_Screen extends JFrame {
 		});
 		btnMissed_1.setBounds(123, 81, 91, 23);
 		contentPane.add(btnMissed_1);
+		
+		JLabel label = new JLabel("New label");
+		label.setBounds(20, 130, 200, 50);
+		contentPane.add(label);
 	}
 }
