@@ -1,21 +1,9 @@
 
 import java.awt.EventQueue;
+import java.awt.GridLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
-
-import java.awt.Font;
-
-
-
-import javax.swing.JButton;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.Color;
 
 
 @SuppressWarnings("serial")
@@ -53,13 +41,28 @@ public class Attendance_Screen extends JFrame {
 	
 	public Attendance_Screen() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 242, 300);
+		setBounds(100, 100, 300, 315);
 		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		//contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-				
+		/*Panel panel = new Panel();
+		panel.setBounds(48, 73, 10, 10);
+		contentPane.add(panel);
+		*/
+		GridLayout layout = new GridLayout(3, 1);
+		setLayout(layout);
+		int i = 0;
+		Node[] node = new Node[3];
+		for (i = 0; i < 3; i++){
+			//Node node = new Node();
+			//System.out.println(i);
+			node[i] = new Node();
+			//node[i].setBounds(0, 0 , 300, 100 );
+		//	System.out.println(0 + 100*i + " " + (100 + 100 * i) );
+			contentPane.add(node[i]);
+		}
 		
 		//Dataholder
 		//ArrayList<Course_Node> Hold = new ArrayList<Course_Node>();
@@ -68,75 +71,6 @@ public class Attendance_Screen extends JFrame {
 		//Load the Content From File
 		final Save_Load sam = new Save_Load();
 		sam.load("Courses.txt");
-		
-		JLabel lblCourseName_1 = new JLabel("Computer Communicaton Network II");
-		lblCourseName_1.setBounds(52, 11, 331, 14);
-		contentPane.add(lblCourseName_1);
-		lblCourseName_1.setText(Save_Load.Course_List.get(0).Course_Name);
-		
-		JLabel lblAttend_1 = new JLabel("Attended_Letures");
-		lblAttend_1.setForeground(Color.BLACK);
-		lblAttend_1.setBounds(20, 36, 93, 14);
-		contentPane.add(lblAttend_1);
-		
-		JLabel lblCode_1 = new JLabel("CO312");
-		lblCode_1.setBounds(10, 11, 36, 14);
-		contentPane.add(lblCode_1);
-		lblCode_1.setText(Save_Load.Course_List.get(0).Course_Code);
-		
-		final JLabel lblNoAt_1 = new JLabel("01");
-		lblNoAt_1.setBounds(123, 36, 17, 14);
-		contentPane.add(lblNoAt_1);
-		lblNoAt_1.setText(Integer.toString(Save_Load.Course_List.get(0).lecs_attend));
-		
-		JLabel lblHeld_1 = new JLabel("Lectures Held");
-		lblHeld_1.setBounds(20, 56, 93, 14);
-		contentPane.add(lblHeld_1);
-		
-		final JLabel lblNoHe_1 = new JLabel("01");
-		lblNoHe_1.setBounds(123, 56, 17, 14);
-		contentPane.add(lblNoHe_1);
-		lblNoHe_1.setText(Integer.toString(Save_Load.Course_List.get(0).lecs_held));
-		
-		final JLabel lblPerc_1 = new JLabel("100%");
-		lblPerc_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblPerc_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPerc_1.setBounds(161, 36, 47, 30);
-		contentPane.add(lblPerc_1);
-		lblPerc_1.setText("0");
-		
-		JButton btnAttend_1 = new JButton("Attend");
-		btnAttend_1.addActionListener(new ActionListener() {
-			
-			public void actionPerformed(ActionEvent arg0) {
-				Course_Node temp = Save_Load.Course_List.get(0);
-				temp.attend_lec();
-				lblNoAt_1.setText(Integer.toString(temp.lecs_attend));
-				lblNoHe_1.setText(Integer.toString(temp.lecs_held));
-				lblPerc_1.setText(Integer.toString(temp.attend_perc));
-				sam.save("Courses.txt");
-			}
-			
-		});
-		btnAttend_1.setBounds(20, 81, 91, 23);
-		contentPane.add(btnAttend_1);
-		
-		JButton btnMissed_1 = new JButton("Missed");
-		btnMissed_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Course_Node temp = Save_Load.Course_List.get(0);
-				temp.not_attend_lec();
-				lblNoAt_1.setText(Integer.toString(temp.lecs_attend));
-				lblNoHe_1.setText(Integer.toString(temp.lecs_held));
-				lblPerc_1.setText(Integer.toString(temp.attend_perc));
-				sam.save("Courses.txt");
-			}
-		});
-		btnMissed_1.setBounds(123, 81, 91, 23);
-		contentPane.add(btnMissed_1);
-		
-		JLabel label = new JLabel("New label");
-		label.setBounds(20, 130, 200, 50);
-		contentPane.add(label);
+	
 	}
 }
