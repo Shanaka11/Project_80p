@@ -66,7 +66,7 @@ public class Course_Node {
 	
 	public void percentAge(){
 		
-		this.attend_perc = this.lecs_attend/this.lecs_held;
+		this.attend_perc = this.lecs_attend*100/this.lecs_held;
 		
 	}
 }

@@ -8,7 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
 import java.awt.Font;
-import java.util.ArrayList;
+
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -78,7 +78,7 @@ public class Attendance_Screen extends JFrame {
 		contentPane.add(lblCode_1);
 		lblCode_1.setText(Save_Load.Course_List.get(0).Course_Code);
 		
-		JLabel lblNoAt_1 = new JLabel("01");
+		final JLabel lblNoAt_1 = new JLabel("01");
 		lblNoAt_1.setBounds(123, 36, 17, 14);
 		contentPane.add(lblNoAt_1);
 		lblNoAt_1.setText(Integer.toString(Save_Load.Course_List.get(0).lecs_attend));
@@ -87,29 +87,43 @@ public class Attendance_Screen extends JFrame {
 		lblHeld_1.setBounds(20, 56, 93, 14);
 		contentPane.add(lblHeld_1);
 		
-		JLabel lblNoHe_1 = new JLabel("01");
+		final JLabel lblNoHe_1 = new JLabel("01");
 		lblNoHe_1.setBounds(123, 56, 17, 14);
 		contentPane.add(lblNoHe_1);
 		lblNoHe_1.setText(Integer.toString(Save_Load.Course_List.get(0).lecs_held));
 		
-		JLabel lblPerc_1 = new JLabel("100%");
+		final JLabel lblPerc_1 = new JLabel("100%");
 		lblPerc_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblPerc_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPerc_1.setBounds(161, 36, 46, 30);
+		lblPerc_1.setBounds(161, 36, 47, 30);
 		contentPane.add(lblPerc_1);
-		lblPerc_1.setText(Integer.toString(Save_Load.Course_List.get(0).attend_perc)+"%");
+		lblPerc_1.setText("0");
 		
 		JButton btnAttend_1 = new JButton("Attend");
 		btnAttend_1.addActionListener(new ActionListener() {
+			
 			public void actionPerformed(ActionEvent arg0) {
-				Save_Load.Course_List.get(0).attend_lec();
-				
+				Course_Node temp = Save_Load.Course_List.get(0);
+				temp.attend_lec();
+				lblNoAt_1.setText(Integer.toString(temp.lecs_attend));
+				lblNoHe_1.setText(Integer.toString(temp.lecs_held));
+				lblPerc_1.setText(Integer.toString(temp.attend_perc));
 			}
+			
 		});
 		btnAttend_1.setBounds(20, 81, 91, 23);
 		contentPane.add(btnAttend_1);
 		
 		JButton btnMissed_1 = new JButton("Missed");
+		btnMissed_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Course_Node temp = Save_Load.Course_List.get(0);
+				temp.not_attend_lec();
+				lblNoAt_1.setText(Integer.toString(temp.lecs_attend));
+				lblNoHe_1.setText(Integer.toString(temp.lecs_held));
+				lblPerc_1.setText(Integer.toString(temp.attend_perc));
+			}
+		});
 		btnMissed_1.setBounds(123, 81, 91, 23);
 		contentPane.add(btnMissed_1);
 	}
