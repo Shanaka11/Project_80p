@@ -43,43 +43,44 @@ public class Attendance_Screen extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		//Load the Content From File
 		
-		JLabel lblCourseName = new JLabel("Computer Communicaton Network II");
-		lblCourseName.setBounds(52, 11, 331, 14);
-		contentPane.add(lblCourseName);
+		JLabel lblCourseName_1 = new JLabel("Computer Communicaton Network II");
+		lblCourseName_1.setBounds(52, 11, 331, 14);
+		contentPane.add(lblCourseName_1);
 		
-		JLabel lblNewLabel = new JLabel("Attended_Letures");
-		lblNewLabel.setBounds(20, 36, 93, 14);
-		contentPane.add(lblNewLabel);
+		JLabel lblAttend_1 = new JLabel("Attended_Letures");
+		lblAttend_1.setBounds(20, 36, 93, 14);
+		contentPane.add(lblAttend_1);
 		
-		JLabel lblCode = new JLabel("CO 312");
-		lblCode.setBounds(10, 11, 36, 14);
-		contentPane.add(lblCode);
+		JLabel lblCode_1 = new JLabel("CO 312");
+		lblCode_1.setBounds(10, 11, 36, 14);
+		contentPane.add(lblCode_1);
 		
-		JLabel label = new JLabel("01");
-		label.setBounds(123, 36, 17, 14);
-		contentPane.add(label);
+		JLabel lblNoAt_1 = new JLabel("01");
+		lblNoAt_1.setBounds(123, 36, 17, 14);
+		contentPane.add(lblNoAt_1);
 		
-		JLabel lblLecturesHeld = new JLabel("Lectures Held");
-		lblLecturesHeld.setBounds(20, 56, 93, 14);
-		contentPane.add(lblLecturesHeld);
+		JLabel lblHeld_1 = new JLabel("Lectures Held");
+		lblHeld_1.setBounds(20, 56, 93, 14);
+		contentPane.add(lblHeld_1);
 		
-		JLabel label_1 = new JLabel("01");
-		label_1.setBounds(123, 56, 17, 14);
-		contentPane.add(label_1);
+		JLabel lblNoHe_1 = new JLabel("01");
+		lblNoHe_1.setBounds(123, 56, 17, 14);
+		contentPane.add(lblNoHe_1);
 		
-		JLabel lblNewLabel_1 = new JLabel("100%");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setBounds(161, 36, 46, 30);
-		contentPane.add(lblNewLabel_1);
+		JLabel lblPerc_1 = new JLabel("100%");
+		lblPerc_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblPerc_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPerc_1.setBounds(161, 36, 46, 30);
+		contentPane.add(lblPerc_1);
 		
-		JButton btnAttend = new JButton("Attend");
-		btnAttend.setBounds(20, 81, 91, 23);
-		contentPane.add(btnAttend);
+		JButton btnAttend_1 = new JButton("Attend");
+		btnAttend_1.setBounds(20, 81, 91, 23);
+		contentPane.add(btnAttend_1);
 		
-		JButton btnMissed = new JButton("Missed");
-		btnMissed.setBounds(123, 81, 91, 23);
-		contentPane.add(btnMissed);
+		JButton btnMissed_1 = new JButton("Missed");
+		btnMissed_1.setBounds(123, 81, 91, 23);
+		contentPane.add(btnMissed_1);
 	}
 }
