@@ -12,11 +12,11 @@ public class Save_Load {
 	
 	// To store File info
 	static ArrayList<Course_Node> Course_List = new ArrayList<Course_Node>();
-	
+	static String filename = "Courses.txt";
 	// To Create 
-	private void create_file(String name){
+	private static void create_file(){
 		
-		File file = new File(name);
+		File file = new File(filename);
 		try {
 			
 			file.createNewFile();
@@ -30,12 +30,12 @@ public class Save_Load {
 	}
 	
 	// To Open & Store them data in the ArrayList
-	public void load(String filename){
+	public static void load(){
 		
 		File file = new File(filename);
 		
 		if(!file.exists()){
-			create_file(filename);
+			create_file();
 		}
 			
 		try {
@@ -70,7 +70,7 @@ public class Save_Load {
 	// This will take a list from the main program and save it in the file
 
 	
-	public void save(String filename){
+	public static void save(){
 		
 		Formatter x;
 		try{
@@ -96,7 +96,7 @@ public class Save_Load {
 		}
 	}
 	
-	public void addItem(int a,int b,int c){
+	public static void addItem(int a,int b,int c){
 		
 		
 	
@@ -105,7 +105,7 @@ public class Save_Load {
 	
 	
 	// To clear the ArrayList
-	public void freeList(){
+	public static void freeList(){
 		
 		Course_List = new ArrayList<Course_Node>();
 		

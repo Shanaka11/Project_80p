@@ -30,18 +30,11 @@ public class Attendance_Screen extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public void sample_input(){
-		
-		Course_Node sam2 = new Course_Node("Data_Structures_and_Algorithems","CO322");
-		Save_Load sam = new Save_Load();
-		Save_Load.Course_List.add(sam2);
-		sam.save("Courses.txt");
-		
-	}
+	
 	
 	public Attendance_Screen() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 300, 315);
+		setBounds(100, 100, 309, 315);
 		contentPane = new JPanel();
 		//contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -51,26 +44,31 @@ public class Attendance_Screen extends JFrame {
 		panel.setBounds(48, 73, 10, 10);
 		contentPane.add(panel);
 		*/
+		//final Save_Load sam = new Save_Load();
+		//sam.load("Courses.txt");
+		
+		Save_Load.load();
 		GridLayout layout = new GridLayout(3, 1);
 		setLayout(layout);
-		int i = 0;
+		
+		int i;
 		Node[] node = new Node[3];
+		Course_Node temp;
+		
 		for (i = 0; i < 3; i++){
-			//Node node = new Node();
-			//System.out.println(i);
-			node[i] = new Node();
-			//node[i].setBounds(0, 0 , 300, 100 );
-		//	System.out.println(0 + 100*i + " " + (100 + 100 * i) );
+			
+			temp = Save_Load.Course_List.get(i);
+			node[i] = new Node(temp);
+		
 			contentPane.add(node[i]);
 		}
 		
 		//Dataholder
 		//ArrayList<Course_Node> Hold = new ArrayList<Course_Node>();
 		//Enter a sample entry
-		sample_input();
+		//sample_input();
 		//Load the Content From File
-		final Save_Load sam = new Save_Load();
-		sam.load("Courses.txt");
+		
 	
 	}
 }
