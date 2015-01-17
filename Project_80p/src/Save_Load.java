@@ -1,7 +1,8 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.Formatter;
 import java.util.Scanner;
 
 
@@ -10,7 +11,7 @@ public class Save_Load {
 	//Creating Reading Saving files
 	
 	// To store File info
-	static HashMap<String,Course_Node> Course_List = new HashMap<String,Course_Node>();
+	static ArrayList<Course_Node> Course_List = new ArrayList<Course_Node>();
 	
 	// To Create 
 	private void create_file(String name){
@@ -49,7 +50,7 @@ public class Save_Load {
 				in = x.nextLine();
 				temp = in.split(" ");
 				Course_Node temp_node = new Course_Node(temp[0], temp[1], Integer.parseInt(temp[2]), Integer.parseInt(temp[3]));
-				Course_List.put(temp[1], temp_node);
+				Course_List.add(temp_node);
 				
 			}
 			
@@ -67,12 +68,46 @@ public class Save_Load {
 	
 	// To Save data to the file
 	// This will take a list from the main program and save it in the file
+
+	
+	public void save(String filename){
+		
+		Formatter x;
+		try{
+			
+			//Open the file
+			x = new Formatter(filename);
+			Course_Node node;
+			//Saving the data
+			for (int i = 0; i < Course_List.size(); i++){
+			
+				node = Course_List.get(i);
+				x.format("%s %s %s %s\n",node.Course_Name,node.Course_Code,node.lecs_attend
+						,node.lecs_held);
+			
+			}
+			x.close();
+			
+		}
+		catch(Exception e){
+			
+			System.out.println("Error");
+			
+		}
+	}
+	
+	public void addItem(int a,int b,int c){
+		
+		
+	
+	}
+	
 	
 	
 	// To clear the ArrayList
 	public void freeList(){
 		
-		Course_List = new HashMap<String,Course_Node>();
+		Course_List = new ArrayList<Course_Node>();
 		
 	}
 	
