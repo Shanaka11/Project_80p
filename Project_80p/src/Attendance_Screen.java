@@ -36,6 +36,15 @@ public class Attendance_Screen extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	public void sample_input(){
+		
+		Course_Node sam2 = new Course_Node("CO 322","Data Structures and Algorithems");
+		Save_Load sam = new Save_Load();
+		Save_Load.Course_List.add(sam2);
+		sam.save("Courses.txt");
+		
+	}
+	
 	public Attendance_Screen() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 242, 300);
@@ -43,7 +52,11 @@ public class Attendance_Screen extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		//Enter a sample entry
+		sample_input();
 		//Load the Content From File
+		
 		
 		JLabel lblCourseName_1 = new JLabel("Computer Communicaton Network II");
 		lblCourseName_1.setBounds(52, 11, 331, 14);
