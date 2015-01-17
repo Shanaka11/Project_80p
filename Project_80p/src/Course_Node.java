@@ -27,7 +27,11 @@ public class Course_Node {
 		this.Course_Code = code;
 		this.lecs_attend = attend;
 		this.lecs_held = held;
-		percentAge();
+		if(!(this.lecs_attend == 0 || this.lecs_held == 0)){
+			percentAge();
+		}else{
+			this.attend_perc = 0;
+		}
 	}
 	
 	// for testing
