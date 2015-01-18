@@ -40,19 +40,24 @@ public class Node extends JPanel {
 		JLabel lblName = new JLabel(printHelper(c_node.Course_Name));
 		lblName.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 12));
 		lblName.setForeground(new Color(255, 255, 255));
-		lblName.setBounds(70, 6, 230, 20);
+		lblName.setBounds(70, 2, 230, 20);
 		add(lblName);
 		
 		//Percentage Gauge
-		JLabel lblGauge = new JLabel(new ImageIcon("G:\\Project_80p_rep\\Project_80p\\Design_Guide(UI)\\Percentage_Gauge\\Percentage_Gauge_75.png"));
+		//ImageIcon Gauge = new ImageIcon("Design_Guide(UI)/Percentage_Gauge/Percentage_Gauge_75.png");
+		//JLabel lblGauge = new JLabel(Gauge);
+		JLabel lblGauge = new JLabel("");
+		lblGauge.setIcon(new ImageIcon("G:\\Project_80p_rep\\Project_80p\\Design_Guide(UI)\\Percentage_Gauge\\Percentage_Gauge_75.png"));
 		lblGauge.setBounds(205, 32, 67, 57);
 		add(lblGauge);
 		
 		//For Background
+		//ImageIcon BackGround = new ImageIcon("Design_Guide(UI)/Template_Course_Node_Basic.png");
 		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon("G:\\Project_80p_rep\\Project_80p\\Design_Guide(UI)\\Template_Course_Node_Basic.png"));
 		lblNewLabel.setBounds(0, 0, 300, 100);
 		//lblNewLabel.setBounds(0, 0, 300, 100);
-		lblNewLabel.setIcon(new ImageIcon("G:\\Project_80p_rep\\Project_80p\\Design_Guide(UI)\\Template_Course_Node_Basic.png"));
+		//lblNewLabel.setIcon(BackGround);
 		add(lblNewLabel);
 
 	}
@@ -69,5 +74,4 @@ public class Node extends JPanel {
 		}
 		return out;
 	}
-
 }
