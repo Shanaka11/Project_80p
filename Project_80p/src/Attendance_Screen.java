@@ -33,8 +33,14 @@ public class Attendance_Screen extends JFrame {
 	
 	
 	public Attendance_Screen() {
+		
+		//Setting the panel
+		Save_Load.load();
+		int size = Save_Load.Course_List.size();
+		
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 309, 315);
+		setBounds(100, 100, 309, 105*size);
 		contentPane = new JPanel();
 		//contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -47,15 +53,14 @@ public class Attendance_Screen extends JFrame {
 		//final Save_Load sam = new Save_Load();
 		//sam.load("Courses.txt");
 		
-		Save_Load.load();
-		GridLayout layout = new GridLayout(3, 1);
+		GridLayout layout = new GridLayout(size, 1);
 		setLayout(layout);
 		
 		int i;
-		Node[] node = new Node[3];
+		Node[] node = new Node[size];
 		Course_Node temp;
 		
-		for (i = 0; i < 3; i++){
+		for (i = 0; i < size; i++){
 			
 			temp = Save_Load.Course_List.get(i);
 			node[i] = new Node(temp);
