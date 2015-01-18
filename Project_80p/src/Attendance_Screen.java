@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 
+
 @SuppressWarnings("serial")
 public class Attendance_Screen extends JFrame {
 
@@ -54,7 +55,7 @@ public class Attendance_Screen extends JFrame {
 		//sam.load("Courses.txt");
 		
 		GridLayout layout = new GridLayout(size, 1);
-		setLayout(layout);
+		getContentPane().setLayout(layout);
 		
 		int i;
 		Node[] node = new Node[size];
@@ -73,6 +74,7 @@ public class Attendance_Screen extends JFrame {
 		//Enter a sample entry
 		//sample_input();
 		//Load the Content From File
+	
 		
 	
 	}
