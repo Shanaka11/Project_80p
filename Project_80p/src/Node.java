@@ -58,7 +58,7 @@ public class Node extends JPanel {
 				Integer.toString(c_node.attend_perc)+".png";
 		
 		ImageIcon Gauge = new ImageIcon(GaugeImage);
-		JLabel lblGauge = new JLabel(Gauge);
+		final JLabel lblGauge = new JLabel(Gauge);
 		//JLabel lblGauge = new JLabel("");
 		//lblGauge.setIcon(new ImageIcon("G:\\Project_80p_rep\\Project_80p\\Design_Guide(UI)\\Percentage_Gauge\\Percentage_Gauge_75.png"));
 		lblGauge.setBounds(205, 32, 67, 57);
@@ -78,9 +78,14 @@ public class Node extends JPanel {
 				lblHeNo.setText(Integer.toString(temp));
 				
 				//Course_Node temp_Node;
-				c_node.lecs_attend++;
-				c_node.lecs_held++;
+				c_node.attend_lec();
 				Save_Load.save();
+				//change the image
+				String GaugeImage_t = "Design_Guide(UI)/Percentage_Gauge/Percentage_Gauge_" +
+						Integer.toString(c_node.attend_perc)+".png";
+				
+				ImageIcon Gauge_t = new ImageIcon(GaugeImage_t);
+				lblGauge.setIcon(Gauge_t);
 			}
 		});
 		
@@ -102,8 +107,14 @@ public class Node extends JPanel {
 				temp = Integer.parseInt(lblHeNo.getText())+1; 
 				lblHeNo.setText(Integer.toString(temp));
 				
-				c_node.lecs_held++;
+				c_node.not_attend_lec();
 				Save_Load.save();
+				//change the Image
+				String GaugeImage_t = "Design_Guide(UI)/Percentage_Gauge/Percentage_Gauge_" +
+						Integer.toString(c_node.attend_perc)+".png";
+				
+				ImageIcon Gauge_t = new ImageIcon(GaugeImage_t);
+				lblGauge.setIcon(Gauge_t);
 			}
 		});
 		btnHeld.setOpaque(false);
