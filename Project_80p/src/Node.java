@@ -54,7 +54,10 @@ public class Node extends JPanel {
 		add(lblName);
 		
 		//Percentage Gauge
-		ImageIcon Gauge = new ImageIcon("Design_Guide(UI)/Percentage_Gauge/Percentage_Gauge_75.png");
+		String GaugeImage = "Design_Guide(UI)/Percentage_Gauge/Percentage_Gauge_" +
+				Integer.toString(c_node.attend_perc)+".png";
+		
+		ImageIcon Gauge = new ImageIcon(GaugeImage);
 		JLabel lblGauge = new JLabel(Gauge);
 		//JLabel lblGauge = new JLabel("");
 		//lblGauge.setIcon(new ImageIcon("G:\\Project_80p_rep\\Project_80p\\Design_Guide(UI)\\Percentage_Gauge\\Percentage_Gauge_75.png"));
