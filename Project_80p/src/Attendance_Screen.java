@@ -20,6 +20,7 @@ public class Attendance_Screen extends JFrame {
 			public void run() {
 				try {
 					Attendance_Screen frame = new Attendance_Screen();
+					frame.setUndecorated(true);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -41,7 +42,8 @@ public class Attendance_Screen extends JFrame {
 		
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 309, 105*size);
+		
+		setBounds(100, 100, 300, 100*size);
 		contentPane = new JPanel();
 		//contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);

@@ -20,7 +20,7 @@ public class Node extends JPanel {
 	public Node(final Course_Node c_node) {
 		setLayout(null);
 		setLayout(null);
-		
+				
 		//Button
 		
 		
@@ -66,7 +66,7 @@ public class Node extends JPanel {
 		
 		//Attend Button
 		final ImageIcon Button_Attend_Off = new ImageIcon("Design_Guide(UI)/Button_off_Attend.png");
-		final ImageIcon Button_Attend_On = new ImageIcon("Design_Guide(UI)/Button_on_Attend.png");
+		//final ImageIcon Button_Attend_On = new ImageIcon("Design_Guide(UI)/Button_on_Attend.png");
 		final JButton btnAttend = new JButton("");
 		btnAttend.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -99,7 +99,7 @@ public class Node extends JPanel {
 		
 		//Held Button
 		ImageIcon Button_Held_Off = new ImageIcon("Design_Guide(UI)/Button_off_Held.png");
-		ImageIcon Button_Held_On = new ImageIcon("Design_Guide(UI)/Button_on_Held.png");
+		//ImageIcon Button_Held_On = new ImageIcon("Design_Guide(UI)/Button_on_Held.png");
 		JButton btnHeld = new JButton("");
 		btnHeld.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
